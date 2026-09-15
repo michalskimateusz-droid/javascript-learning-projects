@@ -31,18 +31,22 @@ One of the main goals of this project was learning how JavaScript communicates w
 
 I practiced selecting elements using:
 
-- document.querySelector();
-  and also reading or modifying properties such as:
-- .textContent
-- .value
-- .style
+`document.querySelector()`
+
+and also reading or modifying properties such as:
+
+- `.textContent`
+- `.value`
+- `.style`
 
 This helped me understand the connection between JavaScript application logic and the user interface.
 
 ### Event Handling:
 
 The game introduced me to event-driven application behavior using:
-.addEventListener()
+
+`.addEventListener()`
+
 The application reacts to user actions such as checking a number or starting a new game.
 
 ### Application Logic:
@@ -61,9 +65,9 @@ Depending on the result, the application:
 
 The game uses variables to maintain its current state, including:
 
-- secretNumber
-- score
-- highScore
+- `secretNumber`
+- `score`
+- `highScore`
 
 This was one of my first practical examples of understanding that application data needs to persist and change as the user interacts with the interface.
 
@@ -91,16 +95,21 @@ This introduced me to maintaining values across multiple rounds of the same appl
 
 ### Refactoring and the DRY Principle:
 
-Robert C. Martin once said "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.". Following that particular good practice, all the code which I wrote and will write is based on DRY principle.
-Regarding the above, important part of the project was revisiting the working implementation and identifying duplicated code.
+An important part of the project was revisiting the working implementation and identifying duplicated code.
+
+While learning about the DRY (Don't Repeat Yourself) principle, I started looking at the implementation not only from the perspective of whether it works, but also whether the same logic can be expressed in a simpler and more maintainable way.
+
 The original version contained separate logic for guesses that were too high and too low, even though most of the behavior was identical.
+
 This logic was simplified using conditional expressions, and repeated DOM manipulation was extracted into a reusable function:
-"
+
+```javascript
 const displayMessage = function (message) {
-document.querySelector('.message').textContent = message;
+  document.querySelector(".message").textContent = message;
 };
-"
-This was an early practical introduction to the DRY (Don't Repeat Yourself) principle and showed me that working code can still be improved for readability and maintainability.
+```
+
+This was an early practical introduction to code refactoring and showed me that working code is not necessarily finished code - it can still be improved for readability, maintainability and reduced duplication.
 
 ### Learning Process:
 
@@ -139,4 +148,4 @@ The implementation follows the course exercise, while my personal learning notes
 
 I have included the project in this repository to document the development of my programming foundations and the path that later supported my transition toward test automation.
 
-Part of my "JavaScript Learning Projects portfolio".
+Part of my [JavaScript Learning Projects](../README.md) portfolio.
